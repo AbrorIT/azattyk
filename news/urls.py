@@ -18,10 +18,12 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from apps.settings.views import index
+from apps.posts.views import Publication
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name = 'index')
+    path('', index, name = 'index'),
+    path('', Publication, name ='publication' ),
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

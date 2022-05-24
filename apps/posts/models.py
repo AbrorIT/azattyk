@@ -1,6 +1,3 @@
-from distutils.command.upload import upload
-from statistics import mode
-from turtle import title
 from django.db import models
 
 # Create your models here.
@@ -15,4 +12,10 @@ class Post(models.Model):
         ('Спорт', 'Спорт')
     )
     news = models.CharField(choices='NEWS_CHOICES', default='Политика', max_length=255)
-    
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Новость"
+        verbose_name_plural = "Новости"
