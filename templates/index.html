@@ -127,7 +127,7 @@
                     <div class="col-lg-4">
                         <div class="post-entry d-block small-post-entry-v">
                             <div class="thumbnail">
-                                <a href="single.html">
+                                <a href="{% url 'publication' post.id %}">
                                 <img src="{{post.post_image.url}}" alt="Image" class="img-fluid" data-pagespeed-url-hash="3151298507" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
                                 </a>
                             </div>
@@ -158,7 +158,7 @@
             <div class="container">
                 <div class="row justify-content-center mb-5">
                     <div class="col-lg-7 text-center">
-                        <h2 class="heading">Most Popular Posts</h2>
+                        <h2 class="heading">Популярный новости</h2>
                     </div>
                 </div>
             </div>
