@@ -4,7 +4,7 @@ from apps.posts.models import Post
 # Create your views here.
 
 def Publication(request, id):
-    post = Post.objects.all().order_by('-id')
+    post = Post.objects.get(id = id)
     context = {
         'post' : post,
     }

@@ -23,7 +23,7 @@ from apps.posts.views import Publication
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name = 'index'),
-    path('', Publication, name ='publication' ),
+    path('news/<int:id>', Publication, name ='publication' ),
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
