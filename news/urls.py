@@ -20,13 +20,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 from apps.settings.views import index
 from apps.posts.views import Publication
-from apps.categories.views import Category
+from apps.categories.views import category
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name = 'index'),
     path('news/<int:id>', Publication, name ='publication' ),
-    path('news/<int:id>', Category, name= 'category'),
+    path('category/<int:id>', category, name= 'category'),
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
