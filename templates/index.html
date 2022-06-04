@@ -165,6 +165,7 @@
                             </div>
                         </div>
                         <div class="row justify-content-center">
+                        
                             {% for post in category.post_category.all %}
                             <div class="col-lg-12">
                                 <div class="post-entry d-md-flex xsmall-horizontal mb-5">
@@ -190,29 +191,11 @@
                                 </div>
                             </div>
                             {% endfor %}
+                            
                         </div>
                     </div>
                     {% endfor %}
                 </div>
-            </div>
-        </div>
-        <div class="py-5 bg-light mx-md-3 sec-subscribe">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2 class="h4 fw-bold">Subscribe to newsletter</h2>
-                    </div>
-                </div>
-                <form action="" class="row">
-                    <div class="col-md-8">
-                        <div class="mb-3 mb-md-0">
-                            <input type="email" class="form-control" placeholder="Enter your email">
-                        </div>
-                    </div>
-                    <div class="col-md-4 d-grid">
-                        <input type="submit" class="btn btn-primary" value="Subscribe">
-                    </div>
-                </form>
             </div>
         </div>
         <div class="site-footer">
@@ -221,19 +204,17 @@
                 <div class="col-lg-7 text-center">
                     <div class="widget">
                         <ul class="social list-unstyled">
-                            <li><a href="#"><span class="icon-facebook"></span></a></li>
+                            <li><a href="{% url 'index' %}"><span class="icon-facebook"></span></a></li>
                             <li><a href="#"><span class="icon-twitter"></span></a></li>
-                            <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                            <li><a href="#"><span class="icon-youtube-play"></span></a></li>
+                            <li><a href="#"><span class="icon-instagram"></span></a></li>
                         </ul>
                     </div>
                     <div class="widget">
                         <p>
-                            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" rel="nofollow noopener">Colorlib</a>
+                            IT_RUN &copy;<script>document.write(new Date().getFullYear());</script>  <i class="icon-heart text-danger" aria-hidden="true"></i> <a href="https://colorlib.com" target="_blank" rel="nofollow noopener"></a>
                         </p>
                         <div class="d-block">
-                            <a href="#" class="m-2">Terms &amp; Conditions</a>/
-                            <a href="#" class="m-2">Privacy Policy</a>
+                            <a href="#" class="m-2">Автор &amp; Султанов</a>
                         </div>
                     </div>
                 </div>
