@@ -10,7 +10,7 @@ def index(request):
     posts = Post.objects.all()
     categories = Category.objects.all().order_by("?")[:2]
     context = {
-        'homes' : home,
+        'home' : home,
         'posts' : posts,
         'slide_posts' : slide_posts,
         'categories' : categories,

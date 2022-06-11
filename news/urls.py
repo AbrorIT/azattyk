@@ -21,12 +21,14 @@ from django.conf.urls.static import static
 from apps.settings.views import index
 from apps.posts.views import Publication
 from apps.categories.views import category
+from apps.posts.views import post_search
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name = 'index'),
     path('news/<int:id>', Publication, name ='publication' ),
     path('category/<int:id>', category, name= 'category'),
+    path('search/', post_search, name='search')
 ]
 
 urlpatterns+=static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

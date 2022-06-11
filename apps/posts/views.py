@@ -26,4 +26,4 @@ def post_search(request):
         'home' : home, 
         'posts' : posts,
     }
-    return render(request, 'index.html', context)
+    return render(request, 'search.html', context)

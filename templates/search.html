@@ -1,0 +1,133 @@
+{% extends 'homepage.html' %}
+{% load static %}
+{% block content %}
+
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close">
+                    <span class="icofont-close js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+        <nav class="site-nav">
+            <div class="container">
+                <div class="site-navigation">
+                    <div class="row">
+                        <div class="col-md-6 text-center order-1 order-md-2 mb-3 mb-md-0">
+                            <a href="{% url 'index' %}" class="logo m-0 text-uppercase">Новости</a>
+                        </div>
+                        <div class="col-md-3 order-3 order-md-1">
+                            <form action="#" class="search-form">
+                                <span class="icon-search2"></span>
+                                <input type="search" class="form-control" placeholder="Search...">
+                            </form>
+                        </div>
+                        <div class="col-md-3 text-end order-2 order-md-3 mb-3 mb-md-0">
+                            <div class="d-flex">
+                                <ul class="list-unstyled social me-auto">
+                                    <li><a href="#"><span class="icon-twitter"></span></a></li>
+                                    <li><a href="#"><span class="icon-facebook"></span></a></li>
+                                    <li><a href="#"><span class="icon-instagram"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        {% for post in posts %}
+        <div class="section post-section pt-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+
+                        <h2 class="heading text-center">{{ post.title }}</h2>
+                        <p class="lead mb-4 text-center">{{ post.discription }}</p>
+                        <img src="{{ post.post_image.url }}" alt="Image" class="img-fluid rounded mb-4">
+                        <p>
+                            {{ post.description }}
+                        </p>
+                        <div class="row g-1 my-5">
+                            {% for image in post.public_image.all %}
+                            <div class="col-lg-4">
+                                <a href="{{ image.public_image.url }}" class="glightbox"><img src="{{ image.public_image.url }}" alt="Image" class="img-fluid rounded"></a>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        <div class="row mt-5 pt-5 border-top">
+                            <div class="col-12">
+                                <span class="fw-bold text-black small mb-1">Share</span>
+                                <ul class="social list-unstyled">
+                                    <li><a href="#"><span class="icon-facebook"></span></a></li>
+                                    <li><a href="#"><span class="icon-twitter"></span></a></li>
+                                    <li><a href="#"><span class="icon-linkedin"></span></a></li>
+                                    <li><a href="#"><span class="icon-pinterest"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="section pb-0">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 class="heading">Новости</h2>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-12">
+                        {% for category in categories %}
+                        {% for posts in category.posts_category.all %}
+                        <div class="post-entry d-md-flex small-horizontal mb-5">
+                            <div class="me-md-5 thumbnail mb-3 mb-md-0">
+                                <img src="{{ post.post_image.url }}" alt="Image" class="img-fluid">
+                            </div>
+                            <div class="content">
+                                
+                                <h2 class="heading"><a href="{% url 'publication' post.id %}">{{ posts.title }}</a></h2>
+                                <p>{{ posts.discription }}</p>
+                                <a href="{% url 'publication' post.id %}" class="post-author d-flex align-items-center">
+                                </a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="site-footer">
+        <div class="container">
+            <div class="row justify-content-center copyright">
+                <div class="col-lg-7 text-center">
+                    <div class="widget">
+                        <ul class="social list-unstyled">
+                            <li><a href="#"><span class="icon-facebook"></span></a></li>
+                            <li><a href="#"><span class="icon-twitter"></span></a></li>
+                            <li><a href="#"><span class="icon-linkedin"></span></a></li>
+                            <li><a href="#"><span class="icon-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                    <div class="widget">
+                        <p>
+                            IT-RUN &copy;<script>document.write(new Date().getFullYear());</script>  <i class="icon-heart text-danger" aria-hidden="true"></i> <a href="https://colorlib.com" target="_blank" rel="nofollow noopener"></a>
+                        </p>
+                        <div class="d-block">
+                            <a href="#" class="m-2">Автор &amp; Султанов </a>/
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="overlayer"></div>
+        <div class="loader">
+            <div class="spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+{% endblock %}  

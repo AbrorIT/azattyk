@@ -14,20 +14,20 @@
                 <div class="site-navigation">
                     <div class="row">
                         <div class="col-md-6 text-center order-1 order-md-2 mb-3 mb-md-0">
-                            <a href="index.html" class="logo m-0 text-uppercase">Новости</a>
+                            <a href="{% url 'index' %}" class="logo m-0 text-uppercase">Новости</a>
                         </div>
                         <div class="col-md-3 order-3 order-md-1">
-                            <form action="#" class="search-form">
+                            <form action="{% url 'search' %}" class="search-form">
                                 <span class="icon-search2"></span>
-                                <input type="search" class="form-control" placeholder="Search...">
+                                <input type="search" class="form-control" name = "key" placeholder="Искать новости...">
                             </form>
                         </div>
                         <div class="col-md-3 text-end order-2 order-md-3 mb-3 mb-md-0">
                             <div class="d-flex">
                                 <ul class="list-unstyled social me-auto">
-                                    <li><a href="#"><span class="icon-twitter"></span></a></li>
-                                    <li><a href="#"><span class="icon-facebook"></span></a></li>
-                                    <li><a href="#"><span class="icon-instagram"></span></a></li>
+                                    <li><a href="{{ home.twitter }}"><span class="icon-twitter"></span></a></li>
+                                    <li><a href="{{ home.facebook }}"><span class="icon-facebook"></span></a></li>
+                                    <li><a href="{{ home.instagram }}"><span class="icon-instagram"></span></a></li>
                                 </ul>
                                 
                             </div>
@@ -153,10 +153,10 @@
                 <div class="col-lg-7 text-center">
                     <div class="widget">
                         <ul class="social list-unstyled">
-                            <li><a href="{% url 'index' %}"><span class="icon-facebook"></span></a></li>
-                            <li><a href="#"><span class="icon-twitter"></span></a></li>
-                            <li><a href="#"><span class="icon-linkedin"></span></a></li>
-                            <li><a href="#"><span class="icon-instagram"></span></a></li>
+                            <li><a href="{{ home.facebook }}"><span class="icon-facebook"></span></a></li>
+                            <li><a href="{{ home.twitter }}"><span class="icon-twitter"></span></a></li>
+                            <li><a href="{{ home.linkedin }}"><span class="icon-linkedin"></span></a></li>
+                            <li><a href="{{ home.instagram }}"><span class="icon-instagram"></span></a></li>
                         </ul>
                     </div>
                     <div class="widget">
