@@ -10,9 +10,11 @@ from django.db.models import Q
 def Publication(request, id):
     post = Post.objects.get(id = id)
     categories = Category.objects.all()
+    home = Settings.objects.latest('id')
     context = {
         'post' : post,
         'categories' : categories,
+        'home' : home,
     }
     return render(request, 'single.html', context)
 
